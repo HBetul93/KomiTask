@@ -1,7 +1,6 @@
-@youTube
+@US5 @youTube
 Feature: YouTube Video
 
-Scenario: US5-User clicks on a Youtube video and asserts that it redirects successfully
-
-When the user clicks on the new YouTube video
-Then the page is redirected to YouTube succesfully
+  Scenario: User clicks on a Youtube video and asserts that it redirects successfully
+    When the user clicks on the YouTube video at the footer section
+    Then the page is redirected to YouTube

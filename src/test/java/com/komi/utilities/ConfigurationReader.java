@@ -6,24 +6,22 @@ import java.util.Properties;
 public class ConfigurationReader {
     private static Properties properties;
 
-
     static {
-
+        String path = "src/configuration.properties";
         try {
-            String path = "src/test/resources/configuration.properties";
-            FileInputStream input = new FileInputStream(path);
+            FileInputStream file = new FileInputStream(path);
             properties = new Properties();
-            properties.load(input);
+            properties.load(file);
 
-            input.close();
+            file.close();
         } catch (Exception e) {
             e.printStackTrace();
-
         }
     }
 
-    public static String get(String keyName) {
-        return properties.getProperty(keyName);
+    // This method accepts the key and returns the value
+    public static String getProperty(String key) {
+        return properties.getProperty(key);
     }
 
 }
