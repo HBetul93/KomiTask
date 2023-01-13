@@ -11,17 +11,12 @@ import java.util.concurrent.TimeUnit;
 
 public class Driver {
 
-    //create a driver instance
     private static WebDriver driver;
     private static final int timeout = 3;
     private static String mainWindowHandle;
 
-    //What?=>It is just to create, initialize the driver instance.(Singleton driver)
-    //Why?=>We don't want to create and initialize the driver when we don't need
-    //We will create and initialize the driver when it is null
-    //We can use Driver class with different browser(chrome,firefox,headless)
     private Driver() {
-        //we don't want to create another object. Singleton pattern
+
     }
 
     public static WebDriver getDriver() {
@@ -37,12 +32,10 @@ public class Driver {
     }
 
     public static void closeDriver() {
-        if (driver != null) {// if the driver is pointing chrome
-            driver.quit();// quit the driver
-            driver = null;// set it back to null to make sure driver is null
-            // so I can initialize it again
-            // This is important especially you do cross browser testing(testing with
-            // multiple browser like chrome, firefox, ie etc.)
+        if (driver != null) {
+            driver.quit();
+            driver = null;
+
         }
     }
 
